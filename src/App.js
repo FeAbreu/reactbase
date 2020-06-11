@@ -1,14 +1,20 @@
 import React from 'react';
-import Login from './pages/Login';
-import GlobalStyle from './styles/GlobalStyles'
+import history from './services/history';
+//import Header from './components/Header'
+import Routes from './routes';
+import { Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/GlobalStyle.css';
 
 function App() {
   return (
-    <>
-    <Login />
-    <GlobalStyle />
-    </>
-  );
-}
+    <Router history={history}>
+
+      <Routes />
+      <ToastContainer autoClose={3000} className="toast-container" />
+    </Router>
+  )
+};
 
 export default App;
